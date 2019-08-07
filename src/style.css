@@ -1,0 +1,10 @@
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+h1, p {
+  font-family: Lato;
+}
+
+button.btn {
+  margin-right: 5px;
+}
