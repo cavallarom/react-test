@@ -1,4 +1,4 @@
 import React from 'react';
 
-export default ({ person }) => 
-  <h1>Hello {person.name} & {person.type}!</h1>;
+export default ({name}) => 
+  <h1>Hello form in {name}!!</h1>;

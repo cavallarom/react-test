@@ -14,6 +14,11 @@ export class NameForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetState = this.resetState.bind(this);
+    this.cancellaLista = this.cancellaLista.bind(this);
+  }
+
+  cancellaLista(event) {
+    this.setState(state => state.persone = []);
   }
 
   handleChange(event) {
@@ -34,7 +39,6 @@ export class NameForm extends Component {
   }
 
   handleSubmit(event) {
-    
     this.setState(state => {
       const persone = state.persone.concat({
         nome: state.nome,
@@ -42,7 +46,6 @@ export class NameForm extends Component {
       });
       return { persone };
     });
-    
     this.resetState();
     event.preventDefault();
   }
@@ -60,18 +63,22 @@ export class NameForm extends Component {
             Cognome:
           <input class="form-control" type="text" name="cognome" value={this.state.cognome} onChange={this.handleChange} />
           </label>
-          <div class="col-sm-12">
+          <div class="col-sm-12" style={{ 'margin-top': '40px' }}>
             <button class="btn btn-primary" type="submit">Submit form</button>
 
             <button class="btn btn-secondary"
               onClick={this.resetState}
               type="reset">pulisci form</button>
+
+            <button class="btn btn-secondary"
+              onClick={this.cancellaLista}
+              type="button">cancella lista</button>
           </div>
         </form>
-        <hr/>
+        <hr />
         <ul>
           {this.state.persone.map((p, index) => {
-            return ( <li key={index}>{p.nome+ ' '+p.cognome}</li> )
+            return (<li key={index}>{p.nome + ' ' + p.cognome}</li>)
           })}
         </ul>
       </div>

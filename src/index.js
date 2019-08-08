@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
-import {NameForm} from './Form';
+import { NameForm } from './Form';
 import './style.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'React'
+      name: 'react'
     };
   }
 
   render() {
     return (
       <div class="container">
-        <Hello person={{name: this.state.name, type: 'sons'}} />
+        <Hello name={this.state.name} />
         <p>
           Start editing to see some magic happen :)
         </p>
-      <NameForm />
-
+        <NameForm />
       </div>
     );
   }
