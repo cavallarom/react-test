@@ -17,10 +17,6 @@
   },
   "devDependencies": {
     "react-scripts": "latest"
-<<<<<<< HEAD
-  }
-}
-=======
   },
   "browserslist": {
     "production": [
@@ -35,4 +31,3 @@
     ]
   }
 }
->>>>>>> initial
